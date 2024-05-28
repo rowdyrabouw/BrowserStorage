@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Geomanist";
+  src: url("../woff2/geomanist-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GeomanistBlack";
+  src: url("../woff2/geomanist-black-webfont.woff2") format("woff2");
+}
+
+body {
+  font-family: "Geomanist";
+  background-color: #4b054a;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "GeomanistBlack";
+  font-size: 6rem;
+  background: -webkit-linear-gradient(#fff, #fdae03);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+label {
+  font-family: "Geomanist";
+  font-size: 2rem;
+  color: #fff;
+}
+
+div:has(> label) {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+}
+
+input[type="text"] {
+  font-family: "Geomanist";
+  font-size: 2rem;
+  padding: 8px 16px;
+  margin: 12px;
+  border: 2px solid #fdd170;
+  border-radius: 8px;
+}
+
+button {
+  font-family: "Geomanist";
+  font-size: 2rem;
+  padding: 8px 16px;
+  /* margin: 0 16px; */
+  border: 2px solid #fdd170;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+  &:hover {
+    background: #fdd170;
+    cursor: pointer;
+  }
+}
+
+div:has(> button) {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  gap: 24px;
+}
+
+#data {
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 32px;
+}
+
+ul {
+  list-style-type: none;
+  li {
+    padding-bottom: 1em;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  a {
+    color: #fff;
+    text-decoration-color: #fdd170;
+    text-underline-offset: 0.2em;
+    &:hover {
+      color: #fdd170;
+    }
+  }
+}
+
+nav ul {
+  display: flex;
+  gap: 48px;
+  padding-top: 2rem;
+}
+
+hr {
+  margin-top: 2rem;
+  width: 100%;
+  border: 1px dashed #fdd170;
+}
