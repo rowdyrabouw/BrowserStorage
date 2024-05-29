@@ -13,7 +13,7 @@ const openDatabase = async () => {
   });
 };
 
-const saveData = async () => {
+const saveItem = async () => {
   const product = document.querySelector('#product').value;
   const amount = parseInt(document.querySelector('#amount').value);
   const data = { product, amount };
@@ -22,8 +22,10 @@ const saveData = async () => {
   await db.put('groceryList', data);
 }
 
+document.querySelector('button').addEventListener('click', async () => {
+  saveItem();
+});
+
 document.addEventListener("DOMContentLoaded", async () => {
   await openDatabase();
-  await fetchData();
-  await displayData();
 });

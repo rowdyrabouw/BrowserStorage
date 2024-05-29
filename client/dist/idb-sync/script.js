@@ -51,9 +51,8 @@ async function useWorker() {
   }
 }
 
-document.querySelector('button').addEventListener('click', async (event) => {
+document.querySelector('button').addEventListener('click', async () => {
   saveItem();
-  event.preventDefault();
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
