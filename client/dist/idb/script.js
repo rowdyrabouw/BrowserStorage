@@ -6,7 +6,9 @@ const openDatabase = async () => {
   db = await idb.openDB('groceries-idb', 1, {
     upgrade(db, oldVersion, newVersion, transaction, event) {
       console.log('upgrade', db, oldVersion, newVersion, transaction, event);
-      db.createObjectStore('groceryList', { keyPath: "product" });
+      if (oldVersion < 1) {
+        db.createObjectStore('groceryList', { keyPath: "product" });
+      }
     }
   });
 };

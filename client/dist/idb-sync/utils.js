@@ -2,8 +2,10 @@ export const openDatabase = async () => {
   return await idb.openDB('groceries-idb-sync', 1, {
     upgrade(db, oldVersion, newVersion, transaction, event) {
       console.log('upgrade', db, oldVersion, newVersion, transaction, event);
-      const store = db.createObjectStore('groceryList', { keyPath: "product" });
-      store.createIndex("synced", "synced", { unique: false });
+      if (oldVersion < 1) {
+        const store = db.createObjectStore('groceryList', { keyPath: "product" });
+        store.createIndex("synced", "synced", { unique: false });
+      }
     }
   });
 };
