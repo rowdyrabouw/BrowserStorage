@@ -36,6 +36,6 @@ app.get("/cookie", (req, res, next) => {
     res.send(`Cookie sent to server:<br/>Name: <em>Favorite</em><br/>Value: <em>${req.cookies.Favorite}</em>`);
   }
   else {
-    res.cookie("Favorite", "Chocolate").send("Cookie created by server:<br/>Name: <em>Favorite</em><br/>Value: <em>Chocolate</em>");
+    res.cookie("Favorite", "Chocolate", { maxAge: 3600 }).send("Cookie created by server:<br/>Name: <em>Favorite</em><br/>Value: <em>Chocolate</em>");
   }
 });
