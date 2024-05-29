@@ -1,6 +1,6 @@
 let db;
 
-const openDB = indexedDB.open("groceryList-IndexedDB", 1);
+const openDB = indexedDB.open("groceries-IndexedDB", 1);
 
 openDB.onupgradeneeded = function (event) {
   db = openDB.result;
