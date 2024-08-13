@@ -6,7 +6,7 @@ const STATIC_FILES = [
 	"../assets/css/style.css",
 ];
 
-DYNAMIC_CACHE = "dynamic";
+const DYNAMIC_CACHE = "dynamic";
 
 self.addEventListener("install", async () => {
 	console.info("[3] Service Worker installed");
